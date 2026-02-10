@@ -1,7 +1,8 @@
 import axios from "axios";
 
+// load from .env
 const API = axios.create({
-  baseURL: "http://localhost:8000"
+  baseURL: process.env.REACT_APP_BACKEND_API_LINK
 });
 
 export const predictSentiment = (text) =>
