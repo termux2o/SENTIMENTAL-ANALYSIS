@@ -5,10 +5,13 @@ from app.model.predict import get_prediction
 
 app = FastAPI(title="Sentiment AI API")
 
-# allow React connection
+origins = [
+    "https://sentiment-analyzer-ai-theta.vercel.app", 
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
